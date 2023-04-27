@@ -19,4 +19,8 @@ public class HotelController {
         model.addAttribute("listHotels",listHotels);
         return "hotels";
     }
+//    @GetMapping("/hotels/single-page")
+//    public String showSingleHotels(Model model){
+//
+//    }
 }

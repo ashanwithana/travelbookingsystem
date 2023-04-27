@@ -32,11 +32,11 @@
     <div class="row pt-5">
         <div class="col-3 py-4" th:each="HotelDetails : ${listHotels}">
             <div class="card" style="width: 18rem;">
-                <img src="images\h1.jpg" class="card-img-top" alt="hotel image">
+                <img src="\images\h1.jpg" class="card-img-top" alt="hotel image">
                 <div class="card-body" >
                     <h5 class="card-title">[[${HotelDetails.HotelName}]]</h5>
                     <p>[[${HotelDetails.Location}]]</p>
-                    <a th:href="@{'/hotels/single-page'}" class="btn btn-primary">Read more</a>
+                    <a th:href="@{'/hotels/single-page' + ${HotelDetails.Hid}}" class="btn btn-primary">Read more</a>
                 </div>
             </div>
         </div>
