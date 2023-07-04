@@ -152,7 +152,7 @@ select {
     -moz-appearance: none;
     appearance: none;
     background-position: right center;
-    background-image: url(arrow-select.png) !important;
+    background-image: url(../images/arrow-select.png) !important;
     background-repeat: no-repeat !important;
     background-position: right 10px center !important;
     line-height: 1.2;
@@ -5002,7 +5002,7 @@ table {
 }
 
 .password-table .password-cell {
-    background: url(coming-soon.jpg);
+    background: url(../images/coming-soon.jpg);
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: cover;

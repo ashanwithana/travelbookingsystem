@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
+<html class="no-js" lang="en">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -8,14 +8,14 @@
     <meta name="description" content="description">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
-    <link rel="shortcut icon" href="../images/favicon.png" />
+    <link rel="shortcut icon" href="assets/images/favicon.png" />
     <!-- Plugins CSS -->
-    <link rel="stylesheet" href="../css/plugins.css">
+    <link rel="stylesheet" href="assets/css/plugins.css">
     <!-- Bootstap CSS -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <!-- Main Style CSS -->
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 
 <body class="template-product belle">
@@ -59,7 +59,7 @@
                     <!--Desktop Logo-->
                     <div class="logo col-md-2 col-lg-2 d-none d-lg-block">
                         <a href="index.html">
-                            <img src="../images/logo.svg" alt="Belle Multipurpose Html Template" title="Belle Multipurpose Html Template" />
+                            <img src="assets/images/logo.svg" alt="Belle Multipurpose Html Template" title="Belle Multipurpose Html Template" />
                         </a>
                     </div>
                     <!--End Desktop Logo-->
@@ -86,7 +86,7 @@
                     <div class="col-6 col-sm-6 col-md-6 col-lg-2 d-block d-lg-none mobile-logo">
                         <div class="logo">
                             <a href="index.html">
-                                <img src="../images/logo.svg" alt="Belle Multipurpose Html Template" title="Belle Multipurpose Html Template" />
+                                <img src="assets/images/logo.svg" alt="Belle Multipurpose Html Template" title="Belle Multipurpose Html Template" />
                             </a>
                         </div>
                     </div>
@@ -134,53 +134,74 @@
 
                                     <div class="zoompro-wrap product-zoom-right pl-20">
                                         <div class="zoompro-span">
-                                            <img class="" alt="" width="100%" height="350px" src="../images/product-detail-page/camelia-reversible-big1071x1500.jpg" />
+                                            <img class="" alt="" width="100%" height="350px" src="assets/images/product-detail-page/camelia-reversible-big1071x1500.jpg" />
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 col-12">
                                 <div class="product-single__meta">
-                                    <h1 class="product-single__title" th:text="${car.carName}"></h1>
+                                    <h1 class="product-single__title">Hotel Name</h1>
                                     <div class="prInfoRow">
-                                        <div class="product-stock"> <span class="instock ">Passengers : <b th:text="${car.noOfPerson}"></b></span></div>
-                                        <div class="product-sku">Vehicle Number : <span class="variant-sku"><b th:text="${car.carNumber}"></b></span></div>
-                                        <div class="product-sku">Type : <span class="variant-sku"> <b th:text="${car.carType}"></b></span></div>
+                                        <div class="product-stock"> <span class="instock ">Location : <b>New York</b></span></div>
 
-
+                                        <div class="product-sku">Type : <span class="variant-sku"> <b>4-Star</b></span></div>
                                     </div>
                                     <p class="product-single__price product-single__price-product-template">
                                         <span class="visually-hidden">Regular price</span>
                                         <span class="product-price__price product-price__price-product-template product-price__sale product-price__sale--single">
-                                                <span id="ProductPrice-product-template"><span class="money" th:text="${car.pricePerDay}"></span></span>
+                                                <span id="ProductPrice-product-template"><span class="money">$39.99</span></span>
                                         </span>
                                         <span class="discount-badge"> <span class="devider">|</span>&nbsp;
                                         <span>Per Day</span>
                                         </span>
                                     </p>
+                                    <div class="product-single__description rte">
 
-                                    <form method="post" th:action="@{/cars/checkout(carId=${car.carId})}" id="product_form_10508262282" accept-charset="UTF-8" class="product-form product-form-product-template hidedropdown" enctype="multipart/form-data">
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled
+                                            it to make a type specimen book.</p>
+                                    </div>
+
+                                    <form method="post" action="/cart/add" id="product_form_10508262282" accept-charset="UTF-8" class="product-form product-form-product-template hidedropdown" enctype="multipart/form-data">
+
                                         <!-- Product Action -->
                                         <div class="product-action clearfix pt-3">
+                                            <div class="row pb-4">
+                                                <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
+                                                    <label>Arrival <span class="required-f">*</span></label>
+                                                    <input name="birthdate" max="3000-12-31" min="1000-01-01" class="form-control" type="date" required>
+                                                </div>
+                                                <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
+                                                    <label>Departure <span class="required-f">*</span></label>
+                                                    <input name="birthdate" max="3000-12-31" min="1000-01-01" class="form-control" type="date" required>
+                                                </div>
+                                            </div>
                                             <div class="product-form__item--quantity">
                                                 <div class="wrapQtyBtn">
-                                                    <div class="input-group">
-                                                        <button class="btn btn-outline-secondary" type="button" id="decrementDays">-</button>
-                                                        <input type="number" class="form-control text-center w-30" id="days" name="days" min="1" value="1">
-                                                        <button class="btn btn-outline-secondary" type="button" id="incrementDays">+</button>
+                                                    <div class="qtyField">
+                                                        <a class="qtyBtn minus" href="javascript:void(0);"><i class="fa anm anm-minus-r" aria-hidden="true"></i></a>
+                                                        <input type="text" id="Quantity" name="quantity" value="1" class="product-form__input qty">
+                                                        <a class="qtyBtn plus" href="javascript:void(0);"><i class="fa anm anm-plus-r" aria-hidden="true"></i></a>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="form-group w-50 d-flex">
-                                                <label for="totalPrice">Total Price:</label>
-                                                <input type="text" class="form-control ps-4" id="totalPrice" name="totalPrice" th:value="${car.pricePerDay}" readonly>
+                                            <div>
+                                                <p class="product-single__price product-single__price-product-template px-4">
+                                                    <span><b>Total</b></span>
+                                                    <span class="discount-badge"> <span class="devider">|</span>&nbsp;
+                                                    <span class="product-price__price product-price__price-product-template product-price__sale product-price__sale--single">
+                                                        <span id="ProductPrice-product-template"><span class="money">$39.99</span></span>
+                                                    </span>
+                                                    </span>
+                                                </p>
+                                            </div>
+
+                                            <div class="shopify-payment-button py-5" data-shopify="payment-button">
+                                                <button type="button" class="shopify-payment-button__button shopify-payment-button__button--unbranded">Submit</button>
                                             </div>
                                         </div>
-                                        <!-- End Product Action -->
 
-                                        <div class="shopify-payment-button py-2 w-100" data-shopify="payment-button">
-                                            <button type="submit" class="shopify-payment-button__button shopify-payment-button__button--unbranded">Submit</button>
-                                        </div>
+                                        <!-- End Product Action -->
                                     </form>
                                 </div>
                             </div>
@@ -191,18 +212,18 @@
                             <hr>
                             <div class="row pt-5">
                                 <div class="col-12 col-sm-6 col-md-6 col-lg-4 feature">
-                                    <img src="../images/credit-card.png" alt="Safe Payment" title="Safe Payment" />
+                                    <img src="assets/images/credit-card.png" alt="Safe Payment" title="Safe Payment" />
                                     <div class="details">
                                         <h3>Safe Payment</h3>Pay with the world's most payment methods.</div>
                                 </div>
                                 <div class="col-12 col-sm-6 col-md-6 col-lg-4 feature">
-                                    <img src="../images/shield.png" alt="Confidence" title="Confidence" />
+                                    <img src="assets/images/shield.png" alt="Confidence" title="Confidence" />
                                     <div class="details">
                                         <h3>Confidence</h3>Protection covers your purchase and personal data.</div>
                                 </div>
 
                                 <div class="col-12 col-sm-6 col-md-6 col-lg-4 feature">
-                                    <img src="../images/phone-call.png" alt="Hotline" title="Hotline" />
+                                    <img src="assets/images/phone-call.png" alt="Hotline" title="Hotline" />
                                     <div class="details">
                                         <h3>Hotline</h3>Talk to help line for your question on 4141 456 789, 4125 666 888</div>
                                 </div>
@@ -218,27 +239,26 @@
                             </header>
                             <div class="grid-products">
                                 <div class="row">
-                                    <div th:each="relatedCar, stat : ${relatedCars}" class="col-6 col-sm-12 col-md-3 col-lg-3 item" th:if="${stat.index lt 4}">
+                                    <div class="col-6 col-sm-2 col-md-3 col-lg-3 item">
                                         <!-- start product image -->
                                         <div class="product-image">
                                             <!-- start product image -->
-                                            <a href="#" class="grid-view-item__link">
+                                            <a href="single-hotel.html" class="grid-view-item__link">
                                                 <!-- image -->
-                                                <img class="primary blur-up lazyload" data-src="../images/product-images/product-image1.jpg" src="../images/product-images/product-image1.jpg" alt="image" title="product">
+                                                <img class="primary blur-up lazyload" data-src="assets/images/product-images/product-image1.jpg" src="assets/images/product-images/product-image1.jpg" alt="image" title="product">
                                                 <!-- End image -->
                                                 <!-- Hover image -->
-                                                <img class="hover blur-up lazyload" data-src="../images/product-images/product-image1.jpg" src="../images/product-images/product-image1.jpg" alt="image" title="product">
+                                                <img class="hover blur-up lazyload" data-src="assets/images/product-images/product-image1.jpg" src="assets/images/product-images/product-image1.jpg" alt="image" title="product">
                                                 <!-- End hover image -->
                                                 <!-- Variant Image-->
-                                                <img class="grid-view-item__image hover variantImg" src="../images/product-images/product-image1.jpg" alt="image" title="product">
+                                                <img class="grid-view-item__image hover variantImg" src="assets/images/product-images/product-image1.jpg" alt="image" title="product">
                                                 <!-- Variant Image-->
                                             </a>
                                             <!-- end product image -->
 
-                                            <form class="variants add" th:action="@{/cars/{carId}(carId=${relatedCar.carId})}" method="get">
-                                                <button class="btn btn-addto-cart" type="submit" tabindex="0" th:attr="data-carId=${relatedCar.carId}">
-                                                    View Details
-                                                </button>
+                                            <!-- Start product button -->
+                                            <form class="variants add" action="#" onclick="window.location.href='single-hotel.html'" method="post">
+                                                <button class="btn btn-addto-cart" type="button" tabindex="0">View Details</button>
                                             </form>
                                         </div>
                                         <!-- end product image -->
@@ -246,18 +266,132 @@
                                         <div class="product-details text-center">
                                             <!-- product name -->
                                             <div class="product-name">
-                                                <a href="#"  th:text="${relatedCar.carName}"></a>
+                                                <a href="single-hotel.html">Hotel Serene</a>
                                             </div>
                                             <!-- End product name -->
                                             <!-- product price -->
                                             <div class="product-price">
-                                                <span class="price" th:text="${relatedCar.pricePerDay}"></span>
+                                                <p><span class="price">$100.00</span>/Per day</p>
+                                                <!-- <p><span class="price">4-Star</span></p> -->
                                             </div>
                                             <!-- End product price -->
                                         </div>
                                         <!-- End product details -->
                                     </div>
+                                    <div class="col-6 col-sm-2 col-md-3 col-lg-3 item">
+                                        <!-- start product image -->
+                                        <div class="product-image">
+                                            <!-- start product image -->
+                                            <a href="single-hotel.html" class="grid-view-item__link">
+                                                <!-- image -->
+                                                <img class="primary blur-up lazyload" data-src="assets/images/product-images/product-image1.jpg" src="assets/images/product-images/product-image1.jpg" alt="image" title="product">
+                                                <!-- End image -->
+                                                <!-- Hover image -->
+                                                <img class="hover blur-up lazyload" data-src="assets/images/product-images/product-image1.jpg" src="assets/images/product-images/product-image1.jpg" alt="image" title="product">
+                                                <!-- End hover image -->
+                                                <!-- Variant Image-->
+                                                <img class="grid-view-item__image hover variantImg" src="assets/images/product-images/product-image1.jpg" alt="image" title="product">
+                                                <!-- Variant Image-->
+                                            </a>
+                                            <!-- end product image -->
 
+                                            <!-- Start product button -->
+                                            <form class="variants add" action="#" onclick="window.location.href='single-hotel.html'" method="post">
+                                                <button class="btn btn-addto-cart" type="button" tabindex="0">View Details</button>
+                                            </form>
+                                        </div>
+                                        <!-- end product image -->
+                                        <!--start product details -->
+                                        <div class="product-details text-center">
+                                            <!-- product name -->
+                                            <div class="product-name">
+                                                <a href="single-hotel.html">Grand Plaza Hotel</a>
+                                            </div>
+                                            <!-- End product name -->
+                                            <!-- product price -->
+                                            <div class="product-price">
+                                                <p><span class="price">$400.00</span>/Per day</p>
+                                            </div>
+                                            <!-- End product price -->
+                                        </div>
+                                        <!-- End product details -->
+                                    </div>
+                                    <div class="col-6 col-sm-12 col-md-3 col-lg-3 item">
+                                        <!-- start product image -->
+                                        <div class="product-image">
+                                            <!-- start product image -->
+                                            <a href="product-layout-1.html" class="grid-view-item__link">
+                                                <!-- image -->
+                                                <img class="primary blur-up lazyload" data-src="assets/images/product-images/product-image1.jpg" src="assets/images/product-images/product-image1.jpg" alt="image" title="product">
+                                                <!-- End image -->
+                                                <!-- Hover image -->
+                                                <img class="hover blur-up lazyload" data-src="assets/images/product-images/product-image1.jpg" src="assets/images/product-images/product-image1.jpg" alt="image" title="product">
+                                                <!-- End hover image -->
+                                                <!-- Variant Image-->
+                                                <img class="grid-view-item__image hover variantImg" src="assets/images/product-images/product-image1.jpg" alt="image" title="product">
+                                                <!-- Variant Image-->
+                                            </a>
+                                            <!-- end product image -->
+
+                                            <!-- Start product button -->
+                                            <form class="variants add" action="#" onclick="window.location.href='single-hotel.html'" method="post">
+                                                <button class="btn btn-addto-cart" type="button" tabindex="0">View Details</button>
+                                            </form>
+                                        </div>
+                                        <!-- end product image -->
+                                        <!--start product details -->
+                                        <div class="product-details text-center">
+                                            <!-- product name -->
+                                            <div class="product-name">
+                                                <a href="single-hotel.html">Sunflower Inn</a>
+                                            </div>
+                                            <!-- End product name -->
+                                            <!-- product price -->
+                                            <div class="product-price">
+                                                <p><span class="price">$100.00</span>/Per day</p>
+                                            </div>
+                                            <!-- End product price -->
+                                        </div>
+                                        <!-- End product details -->
+                                    </div>
+                                    <div class="col-6 col-sm-2 col-md-3 col-lg-3 item">
+                                        <!-- start product image -->
+                                        <div class="product-image">
+                                            <!-- start product image -->
+                                            <a href="single-hotel.html" class="grid-view-item__link">
+                                                <!-- image -->
+                                                <img class="primary blur-up lazyload" data-src="assets/images/product-images/product-image1.jpg" src="assets/images/product-images/product-image1.jpg" alt="image" title="product">
+                                                <!-- End image -->
+                                                <!-- Hover image -->
+                                                <img class="hover blur-up lazyload" data-src="assets/images/product-images/product-image1.jpg" src="assets/images/product-images/product-image1.jpg" alt="image" title="product">
+                                                <!-- End hover image -->
+                                                <!-- Variant Image-->
+                                                <img class="grid-view-item__image hover variantImg" src="assets/images/product-images/product-image1.jpg" alt="image" title="product">
+                                                <!-- Variant Image-->
+                                            </a>
+                                            <!-- end product image -->
+
+                                            <!-- Start product button -->
+                                            <form class="variants add" action="#" onclick="window.location.href='single-hotel.html'" method="post">
+                                                <button class="btn btn-addto-cart" type="button" tabindex="0">View Details</button>
+                                            </form>
+                                        </div>
+                                        <!-- end product image -->
+                                        <!--start product details -->
+                                        <div class="product-details text-center">
+                                            <!-- product name -->
+                                            <div class="product-name">
+                                                <a href="single-hotel.html">Cityscape Suites </a>
+                                            </div>
+                                            <!-- End product name -->
+                                            <!-- product price -->
+                                            <div class="product-price">
+                                                <p><span class="price">$150.00</span>/Per day</p>
+                                            </div>
+                                            <!-- End product price -->
+                                        </div>
+                                        <!-- End product details -->
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -337,19 +471,19 @@
             <span id="site-scroll"><i class="icon anm anm-angle-up-r"></i></span>
             <!--End Scoll Top-->
             <!-- Including Jquery -->
-            <script src="../js/vendor/jquery-3.3.1.min.js"></script>
-            <script src="../js/vendor/jquery.cookie.js"></script>
-            <script src="../js/vendor/modernizr-3.6.0.min.js"></script>
-            <script src="../js/vendor/wow.min.js"></script>
+            <script src="assets/js/vendor/jquery-3.3.1.min.js"></script>
+            <script src="assets/js/vendor/jquery.cookie.js"></script>
+            <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
+            <script src="assets/js/vendor/wow.min.js"></script>
             <!-- Including Javascript -->
-            <script src="../js/bootstrap.min.js"></script>
-            <script src="../js/plugins.js"></script>
-            <script src="../js/popper.min.js"></script>
-            <script src="../js/lazysizes.js"></script>
-            <script src="../js/main.js"></script>
+            <script src="assets/js/bootstrap.min.js"></script>
+            <script src="assets/js/plugins.js"></script>
+            <script src="assets/js/popper.min.js"></script>
+            <script src="assets/js/lazysizes.js"></script>
+            <script src="assets/js/main.js"></script>
             <!-- Photoswipe Gallery -->
-            <script src="../js/vendor/photoswipe.min.js"></script>
-            <script src="../js/vendor/photoswipe-ui-default.min.js"></script>
+            <script src="assets/js/vendor/photoswipe.min.js"></script>
+            <script src="assets/js/vendor/photoswipe-ui-default.min.js"></script>
             <script>
                 $(function() {
                     var $pswp = $('.pswp')[0],
@@ -391,35 +525,6 @@
                     });
                 });
             </script>
-            <script th:inline="javascript">
-                document.addEventListener("DOMContentLoaded", function() {
-                    var daysInput = document.getElementById("days");
-                    var incrementBtn = document.getElementById("incrementDays");
-                    var decrementBtn = document.getElementById("decrementDays");
-                    var totalPriceInput = document.getElementById("totalPrice");
-                    var pricePerDay = /*[[${car.pricePerDay}]]*/ 0;
-
-                    incrementBtn.addEventListener("click", function() {
-                        daysInput.stepUp();
-                        calculateTotalPrice();
-                    });
-
-                    decrementBtn.addEventListener("click", function() {
-                        daysInput.stepDown();
-                        calculateTotalPrice();
-                    });
-
-                    daysInput.addEventListener("input", function() {
-                        calculateTotalPrice();
-                    });
-
-                    function calculateTotalPrice() {
-                        var days = parseInt(daysInput.value);
-                        var totalPrice = days * pricePerDay;
-                        totalPriceInput.value = totalPrice.toFixed(2);
-                    }
-                });
-            </script>
         </div>
 
         <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
@@ -451,7 +556,7 @@
                 </div>
             </div>
         </div>
-</div>
+
 </body>
 
 </html>
