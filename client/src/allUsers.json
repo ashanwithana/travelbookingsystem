@@ -1,0 +1,112 @@
+[
+    {
+        "name": "John Doe",
+        "email": "jone@gmail.com",
+        "password": "123456",
+        "phone": "1234567890",
+        "address": "123, abc street, xyz city, state, country",
+        "pincode": "123456",
+        "birthDay": "27-01-1999",
+        "userType": "ADMIN",
+        "active": true
+    },
+    {
+        "name": "Jane Smith",
+        "email": "jane_smith@gmail.com",
+        "password": "abcdef",
+        "phone": "0987654321",
+        "address": "456, def street, pqr city, state, country",
+        "pincode": "654321",
+        "birthDay": "12-05-1995",
+        "userType": "USER",
+        "active": true
+    },
+    {
+        "name": "David Johnson",
+        "email": "david.johnson@gmail.com",
+        "password": "qwerty",
+        "phone": "9876543210",
+        "address": "789, ghi street, uvw city, state, country",
+        "pincode": "987654",
+        "birthDay": "03-09-1988",
+        "userType": "USER",
+        "active": true
+    },
+    {
+        "name": "Sarah Williams",
+        "email": "sarah.williams@gmail.com",
+        "password": "password123",
+        "phone": "0123456789",
+        "address": "321, jkl street, mno city, state, country",
+        "pincode": "456789",
+        "birthDay": "18-11-1992",
+        "userType": "USER",
+        "active": true
+    },
+    {
+        "name": "Michael Brown",
+        "email": "michael.brown@gmail.com",
+        "password": "abc123",
+        "phone": "9876543210",
+        "address": "654, pqr street, ghi city, state, country",
+        "pincode": "789456",
+        "birthDay": "25-07-1990",
+        "userType": "USER",
+        "active": true
+    },
+    {
+        "name": "Emily Davis",
+        "email": "emily.davis@gmail.com",
+        "password": "password456",
+        "phone": "0123456789",
+        "address": "987, uvw street, def city, state, country",
+        "pincode": "654987",
+        "birthDay": "09-03-1996",
+        "userType": "USER",
+        "active": true
+    },
+    {
+        "name": "Daniel Taylor",
+        "email": "daniel.taylor@gmail.com",
+        "password": "pass123",
+        "phone": "9876543210",
+        "address": "456, mno street, jkl city, state, country",
+        "pincode": "789654",
+        "birthDay": "15-02-1991",
+        "userType": "USER",
+        "active": true
+    },
+    {
+        "name": "Olivia Anderson",
+        "email": "olivia.anderson@gmail.com",
+        "password": "password789",
+        "phone": "0123456789",
+        "address": "654, ghi street, pqr city, state, country",
+        "pincode": "987123",
+        "birthDay": "28-06-1997",
+        "userType": "USER",
+        "active": true
+    },
+    {
+        "name": "James Wilson",
+        "email": "james.wilson@gmail.com",
+        "password": "qwerty123",
+        "phone": "9876543210",
+        "address": "321, def street, uvw city, state, country",
+        "pincode": "456987",
+        "birthDay": "10-04-1994",
+        "userType": "USER",
+        "active": true
+    },
+    {
+        "name": "Sophia Martinez",
+        "email": "sophia.martinez@gmail.com",
+        "password": "passwordabc",
+        "phone": "0123456789",
+        "address": "987, jkl street, mno city, state, country",
+        "pincode": "789123",
+        "birthDay": "22-08-1993",
+        "userType": "USER",
+        "active": true
+    }
+]
