@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cars List</title>
+    <!--    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.1/css/bootstrap.min.css}" />-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">Your Logo</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Car Rent</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Hotels</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <h1>Cars List</h1>
+    <div class="row">
+        <div class="col-md-4 col-sm-6 mb-4" th:each="car : ${cars}">
+            <div class="card">
+                <img th:src="@{'data:image/jpeg;base64,' + ${car.carImage}}" class="card-img-top" alt="Car Image">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${car.carName}"></h5>
+                    <p class="card-text">
+                        Car Number: <span th:text="${car.carNumber}"></span><br />
+                        Car Type: <span th:text="${car.carType}"></span><br />
+                        No. of Passengers: <span th:text="${car.noOfPerson}"></span><br />
+                        Price per Day: <span th:text="${car.pricePerDay}"></span><br />
+                        Driver Name: <span th:text="${car.driverName}"></span><br />
+                    </p>
+                    <button class="btn btn-primary w" th:attr="data-carId=${car.carId}" onclick="viewCarDetails(this)">See More</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script th:inline="javascript">
+    function viewCarDetails(button) {
+        var carId = button.getAttribute("data-carId");
+        window.location.href = "/car/" + carId;
+    }
+</script>
+</body>
+</html>
