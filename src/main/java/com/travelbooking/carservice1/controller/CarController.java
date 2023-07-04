@@ -49,7 +49,7 @@ public class CarController {
     @GetMapping("/add")
     public String addForm(Model model) {
         model.addAttribute("car", new Car());
-        return "AddForm";
+        return "addCar";
     }
 
     @GetMapping("/{carId}")
