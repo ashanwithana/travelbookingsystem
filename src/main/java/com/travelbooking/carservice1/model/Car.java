@@ -16,20 +16,18 @@ public class Car {
     private int noOfPerson;
     private double pricePerDay;
     private String carType;
-    private String driverName; // New driverId column
 
     // Default constructor (required by JPA)
     public Car() {}
 
     // Constructor
-    public Car(String carName, String carNumber, String carImage, int noOfPerson, double pricePerDay, String carType, String driverName) {
+    public Car(String carName, String carNumber, String carImage, int noOfPerson, double pricePerDay, String carType) {
         this.carName = carName;
         this.carNumber = carNumber;
         this.carImage = carImage.getBytes();
         this.noOfPerson = noOfPerson;
         this.pricePerDay = pricePerDay;
         this.carType = carType;
-        this.driverName = driverName;
     }
 
     // Getters and Setters
@@ -90,12 +88,6 @@ public class Car {
         this.carType = carType;
     }
 
-    public String getDriverName() {
-        return driverName;
-    }
 
-    public void setDriverName(String driverName) {
-        this.driverName = driverName;
-    }
 
 }

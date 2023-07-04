@@ -32,21 +32,20 @@ public class CarController {
         return "cars";
     }
 
-    @PostMapping("/add")
+
+    @PostMapping("/addCar")
     public String addCar(@RequestParam("file") MultipartFile file,
                          @RequestParam("carName") String carName,
                          @RequestParam("carNumber") String carNumber,
                          @RequestParam("carType") String carType,
                          @RequestParam("noOfPassengers") int noOfPassengers,
                          @RequestParam("pricePerDay") double pricePerDay,
-                         @RequestParam("driverName") String driverName,
                          Model model) throws IOException {
 
-        carService.addCarToDB(file, carName, carNumber, carType, driverName, noOfPassengers, pricePerDay);
+        carService.addCarToDB(file, carName, carNumber, carType, noOfPassengers, pricePerDay);
         model.addAttribute("successMessage", "Car added successfully");
         return "redirect:/cars/add";
     }
-
     @GetMapping("/add")
     public String addForm(Model model) {
         model.addAttribute("car", new Car());

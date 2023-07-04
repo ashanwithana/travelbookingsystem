@@ -16,10 +16,11 @@ import java.util.Objects;
 @Service
 public class CarService {
 
+
     @Autowired
     private CarRepository carRepo;
 
-    public void addCarToDB(MultipartFile file, String carName, String carNumber, String carType, String driverName,
+    public void addCarToDB(MultipartFile file, String carName, String carNumber, String carType,
                            int noOfPerson, double pricePerDay) throws IOException {
 
         Car car = new Car();
@@ -36,21 +37,10 @@ public class CarService {
         car.setCarName(carName);
         car.setCarNumber(carNumber);
         car.setCarType(carType);
-        car.setDriverName(driverName);
         car.setNoOfPerson(noOfPerson);
         car.setPricePerDay(pricePerDay);
         carRepo.save(car);
     }
-
-//    private String getImageFilenameForCar(Car car) {
-//        String carName = car.getCarName();
-//        String carNumber = car.getCarNumber();
-//
-//        String filename = carName.toLowerCase().replaceAll("\\s+", "_") + "_" + carNumber + ".jpg";
-//
-//        return filename;
-//    }
-
 
     public List<Car> getAllCars() {
         return carRepo.findAll();

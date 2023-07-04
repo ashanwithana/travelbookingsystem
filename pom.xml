@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.travelBooking</groupId>
-    <artifactId>CarService1</artifactId>
+    <artifactId>CarService</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>CarService1</name>
     <description>CarService1</description>
