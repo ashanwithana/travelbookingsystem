@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Add Offer</title>
+    <meta name="description" content="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../images/favicon.png" />
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="../css/plugins.css">
+    <!-- Bootstap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body class="page-template belle">
+<div class="pageWrapper">
+
+    <!--Body Content-->
+    <div id="page-content">
+        <!--Page Title-->
+        <div class="page section-header text-center mt-5">
+            <div class="page-title">
+                <div class="wrapper">
+                    <h1 class="page-width">Add New Offer</h1>
+                </div>
+            </div>
+        </div>
+        <!--End Page Title-->
+
+        <div class="container">
+            <div class="row billing-fields">
+                <div class="col-xl-12 col-lg-12 col-md-6 col-sm-12 sm-margin-30px-bottom">
+                    <div class="create-ac-content bg-light-gray padding-20px-all">
+                        <form action="/offers/add" method="POST">
+                            <!-- Offer details form fields -->
+                            <fieldset>
+                                <div class="row">
+                                    <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
+                                        <label>Offer Name <span class="required-f">*</span></label>
+                                        <input type="text" name="offerName">
+                                    </div>
+                                    <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
+                                        <label>Discount <span class="required-f">*</span></label>
+                                        <input name="discount" type="text">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
+                                        <label>Start Date <span class="required-f">*</span></label>
+                                        <input name="startDate" type="date">
+                                    </div>
+                                    <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
+                                        <label>End Date <span class="required-f">*</span></label>
+                                        <input name="endDate" type="date">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-md-12">
+                                        <label>Description</label>
+                                        <textarea name="description" rows="4"></textarea>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <!-- Confirm button -->
+                            <div class="your-payment">
+                                <div class="payment-method">
+                                    <div class="order-button-payment">
+                                        <button class="btn" value="Add Offer" type="submit">Add Offer</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Scoll Top-->
+    <span id="site-scroll"><i class="icon anm anm-angle-up-r"></i></span>
+    <!--End Scoll Top-->
+
+    <!-- Including Jquery -->
+    <script src="../static/assets/js/vendor/jquery-3.3.1.min.js"></script>
+    <script src="../static/assets/js/vendor/jquery.cookie.js"></script>
+    <script src="../static/assets/js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="../static/assets/js/vendor/wow.min.js"></script>
+    <!-- Including Javascript -->
+    <script src="../static/assets/js/bootstrap.min.js"></script>
+    <script src="../static/assets/js/plugins.js"></script>
+    <script src="../static/assets/js/popper.min.js"></script>
+    <script src="../static/assets/js/lazysizes.js"></script>
+    <script src="../static/assets/js/main.js"></script>
+</div>
+</body>
+
+</html>
