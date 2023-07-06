@@ -1,7 +1,10 @@
-package com.example.hotelbooking.repository;
+package com.travelbooking.hotelservice.repository;
 
-import com.example.hotelbooking.model.HotelDetails;
-import org.springframework.data.repository.CrudRepository;
+import com.travelbooking.hotelservice.model.Hotel;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface HotelRepository extends CrudRepository<HotelDetails, Integer> {
+import java.util.List;
+
+public interface HotelRepository extends JpaRepository<Hotel,Long> {
+    List<Hotel> findByHotelType(String hotelType);
 }
