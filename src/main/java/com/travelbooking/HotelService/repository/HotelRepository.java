@@ -1,6 +1,10 @@
-package com.travelbooking.HotelService.repository;
+package com.travelbooking.hotelservice.repository;
 
+import com.travelbooking.hotelservice.model.Hotel;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface HotelRepository extends JpaRepository {
+import java.util.List;
+
+public interface HotelRepository extends JpaRepository<Hotel,Long> {
+    List<Hotel> findByHotelType(String hotelType);
 }

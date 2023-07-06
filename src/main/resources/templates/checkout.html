@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -8,14 +8,14 @@
     <meta name="description" content="description">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.png" />
+    <link rel="shortcut icon" href="../images/favicon.png" />
     <!-- Plugins CSS -->
-    <link rel="stylesheet" href="assets/css/plugins.css">
+    <link rel="stylesheet" href="../css/plugins.css">
     <!-- Bootstap CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
     <!-- Main Style CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
 </head>
 
 <body class="page-template belle">
@@ -44,8 +44,8 @@
                     <div class="col-2 col-sm-4 col-md-3 col-lg-4 text-right">
                         <span class="user-menu d-block d-lg-none"><i class="anm anm-user-al" aria-hidden="true"></i></span>
                         <ul class="customer-links list-inline">
-                            <li><a href="login.html">Login</a></li>
-                            <li><a href="register.html">Create Account</a></li>
+                            <li><a href="#">Login</a></li>
+                            <li><a href="#">Create Account</a></li>
                         </ul>
                     </div>
                 </div>
@@ -58,8 +58,8 @@
                 <div class="row align-items-center">
                     <!--Desktop Logo-->
                     <div class="logo col-md-2 col-lg-2 d-none d-lg-block">
-                        <a href="index.html">
-                            <img src="assets/images/logo.svg" alt="Belle Multipurpose Html Template" title="Belle Multipurpose Html Template" />
+                        <a href="#">
+                            <img src="../images/logo.svg" alt="Belle Multipurpose Html Template" title="Belle Multipurpose Html Template" />
                         </a>
                     </div>
                     <!--End Desktop Logo-->
@@ -76,7 +76,7 @@
                             <ul id="siteNav" class="site-nav medium center hidearrow">
                                 <li class="lvl1 parent megamenu"><a href="#">Home <i class="anm anm-angle-down-l"></i></a></li>
                                 <li class="lvl1 parent megamenu"><a href="#">Hotel <i class="anm anm-angle-down-l"></i></a></li>
-                                <li class="lvl1 parent megamenu"><a href="Cars.html">Rental Service <i class="anm anm-angle-down-l"></i></a></li>
+                                <li class="lvl1 parent megamenu"><a href="#">Rental Service <i class="anm anm-angle-down-l"></i></a></li>
                                 <li class="lvl1 parent megamenu"><a href="#">Offers <i class="anm anm-angle-down-l"></i></a></li>
                             </ul>
                         </nav>
@@ -85,8 +85,8 @@
                     <!--Mobile Logo-->
                     <div class="col-6 col-sm-6 col-md-6 col-lg-2 d-block d-lg-none mobile-logo">
                         <div class="logo">
-                            <a href="index.html">
-                                <img src="assets/images/logo.svg" alt="Belle Multipurpose Html Template" title="Belle Multipurpose Html Template" />
+                            <a href="#">
+                                <img src="../images/logo.svg" alt="Belle Multipurpose Html Template" title="Belle Multipurpose Html Template" />
                             </a>
                         </div>
                     </div>
@@ -107,7 +107,7 @@
             <ul id="MobileNav" class="mobile-nav">
                 <li class="lvl1 parent megamenu"><a href="#">Home</a></li>
                 <li class="lvl1 parent megamenu"><a href="#">Hotels</a></li>
-                <li class="lvl1 parent megamenu"><a href="Cars.html">Rental Service</a></li>
+                <li class="lvl1 parent megamenu"><a href="#">Rental Service</a></li>
                 <li class="lvl1 parent megamenu"><a href="#">Offers</a></li>
             </ul>
         </div>
@@ -126,86 +126,98 @@
             <!--End Page Title-->
 
             <div class="container">
-
                 <div class="row billing-fields">
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 sm-margin-30px-bottom">
+                    <div class="col-xl-12 col-lg-12 col-md-6 col-sm-12 sm-margin-30px-bottom">
                         <div class="create-ac-content bg-light-gray padding-20px-all">
-                            <form>
+                            <form action="/confirm" method="post" enctype="multipart/form-data" name="rentalForm" th:object="${booking}">
+                                <!-- Personal details form fields -->
                                 <fieldset>
                                     <h2 class="login-title mb-3">Personal details</h2>
                                     <div class="row">
                                         <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
                                             <label for="input-firstname">First Name <span class="required-f">*</span></label>
-                                            <input name="firstname" value="" id="input-firstname" type="text">
+                                            <input name="fName" id="input-firstname" type="text">
                                         </div>
                                         <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
                                             <label for="input-lastname">Last Name <span class="required-f">*</span></label>
-                                            <input name="lastname" value="" id="input-lastname" type="text">
+                                            <input name="lName" id="input-lastname" type="text">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
                                             <label for="input-email">E-Mail <span class="required-f">*</span></label>
-                                            <input name="email" value="" id="input-email" type="email">
+                                            <input name="email" id="input-email" type="email">
                                         </div>
                                         <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
                                             <label for="input-telephone">Telephone <span class="required-f">*</span></label>
-                                            <input name="telephone" value="" id="input-telephone" type="tel">
+                                            <input name="telephone" id="input-telephone" type="text">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-md-6 col-lg-6 col-xl-6">
                                             <label for="input-company">NIC No</label>
-                                            <input name="company" value="" id="input-company" type="text">
+                                            <input name="nic" id="input-company" type="text">
                                         </div>
                                         <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
                                             <label for="input-address-1">Address <span class="required-f">*</span></label>
-                                            <input name="address_1" value="" id="input-address-1" type="text">
+                                            <input name="address" id="input-address-1" type="text">
                                         </div>
                                     </div>
                                 </fieldset>
-                            </form>
-                        </div>
-                    </div>
 
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                        <div class="your-order-payment">
-                            <div class="your-order">
-                                <h2 class="order-title mb-4">Your Order</h2>
 
+                                <!-- Your Order table -->
                                 <div class="table-responsive-sm order-table">
                                     <table class="bg-white table table-bordered table-hover text-center">
+                                        <!-- Table headers -->
                                         <thead>
-                                            <tr>
-                                                <th class="text-left">Car Name</th>
-                                                <th>Car Number</th>
-                                                <th>Per Day</th>
-                                                <th>No Of Day</th>
-                                                <th>Total</th>
-                                            </tr>
+                                        <tr>
+                                            <th class="text-left">Hotel Name</th>
+                                            <th>Arrival Date</th>
+                                            <th>Departure Date</th>
+                                            <th>Per Day</th>
+                                            <th>No of Persons</th>
+                                            <th>No of Date</th>
+                                            <th>Hotel Type</th>
+                                            <th>Total</th>
+                                        </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td class="text-left">Susuki WagonR</td>
-                                                <td>NK-1243</td>
-                                                <td>$39.99</td>
-                                                <td>3</td>
-                                                <td>$99</td>
-                                            </tr>
+                                        <tr>
+                                            <td class="text-left" th:text="${hotelName}"></td>
+                                            <td th:text="${arrivalDate}"></td>
+                                            <td th:text="${departureDate}"></td>
+                                            <td th:text="${pricePerPerson}"></td>
+                                            <td th:text="${noOfPerson}"></td>
+                                            <td th:text="${numberOfDays}"></td>
+                                            <td th:text="${hotelType}"></td>
+                                            <td th:text="${totalPrice}"></td>
+                                        </tr>
                                         </tbody>
                                     </table>
                                 </div>
-                            </div>
 
-                            <hr />
+                                <input type="hidden" name="hId" th:value="${hotelId}">
+                                <input type="hidden" name="hotelName" th:value="${hotelName}">
+                                <input type="hidden" name="arrivalDate" th:value="${arrivalDate}">
+                                <input type="hidden" name="departureDate" th:value="${departureDate}">
+                                <input type="hidden" name="pricePerDay" th:value="${pricePerPerson}">
+                                <input type="hidden" name="noOfPerson" th:value="${noOfPerson}">
+                                <input type="hidden" name="noOfDate" th:value="${numberOfDays}">
+                                <input type="hidden" name="hType" th:value="${hotelType}">
+                                <input type="hidden" name="totalPrice" th:value="${totalPrice}">
 
-                            <div class="your-payment">
-                                <div class="payment-method">
-                                    <div class="order-button-payment">
-                                        <button class="btn" value="Place order" type="submit">Confirm</button>
+
+                                <!-- Confirm button -->
+                                <div class="your-payment">
+                                    <div class="payment-method">
+                                        <div class="order-button-payment">
+                                            <button class="btn" value="Place order" type="submit">Confirm</button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </form>
+
                         </div>
                     </div>
                 </div>
@@ -283,16 +295,16 @@
         <!--End Scoll Top-->
 
         <!-- Including Jquery -->
-        <script src="assets/js/vendor/jquery-3.3.1.min.js"></script>
-        <script src="assets/js/vendor/jquery.cookie.js"></script>
-        <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
-        <script src="assets/js/vendor/wow.min.js"></script>
+        <script src="../js/vendor/jquery-3.3.1.min.js"></script>
+        <script src="../js/vendor/jquery.cookie.js"></script>
+        <script src="../js/vendor/modernizr-3.6.0.min.js"></script>
+        <script src="../js/vendor/wow.min.js"></script>
         <!-- Including Javascript -->
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/plugins.js"></script>
-        <script src="assets/js/popper.min.js"></script>
-        <script src="assets/js/lazysizes.js"></script>
-        <script src="assets/js/main.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/plugins.js"></script>
+        <script src="../js/popper.min.js"></script>
+        <script src="../js/lazysizes.js"></script>
+        <script src="../js/main.js"></script>
     </div>
 </body>
 
